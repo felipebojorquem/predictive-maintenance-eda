@@ -1,8 +1,3 @@
-# main.py
-"""
-Pipeline reproducible: load → clean → validate → features → export → profile
-Ejecutar desde la raíz del proyecto: uv run python main.py
-"""
 from pathlib import Path
 
 from loguru import logger
@@ -42,7 +37,7 @@ def main() -> None:
 
     # 6. Generar reporte de profiling
     logger.info("Generando reporte ydata-profiling")
-    from ydata_profiling import ProfileReport
+    from data_profiling import ProfileReport
 
     profile = ProfileReport(df, title="AI4I 2020 EDA Report", explorative=True)
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)

@@ -1,5 +1,5 @@
 import pandas as pd
-import pandera as pa
+import pandera.pandas as pa
 from loguru import logger
 
 from src.config import FAILURE_TYPES, TARGET_COL
