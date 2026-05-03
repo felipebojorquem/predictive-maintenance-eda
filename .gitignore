@@ -8,3 +8,5 @@ reports/profiling/
 .ipynb_checkpoints/
 .ruff_cache/
 logs/
+*.pdf
+check_project.py
