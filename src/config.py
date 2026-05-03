@@ -1,4 +1,3 @@
-# src/config.py
 from pathlib import Path
 
 # Rutas base — relativas a la raíz del proyecto
