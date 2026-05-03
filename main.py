@@ -36,7 +36,7 @@ def main() -> None:
     save_parquet(df)
 
     # 6. Generar reporte de profiling
-    logger.info("Generando reporte ydata-profiling")
+    logger.info("Generando reporte data-profiling")
     from data_profiling import ProfileReport
 
     profile = ProfileReport(df, title="AI4I 2020 EDA Report", explorative=True)

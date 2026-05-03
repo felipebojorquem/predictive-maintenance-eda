@@ -1,8 +1,3 @@
-# tests/test_cleaning.py
-"""
-Tests básicos para src/cleaning.py y src/features.py.
-Ejecutar: uv run pytest tests/ -v --tb=short
-"""
 import pandas as pd
 import pytest
 
