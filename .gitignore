@@ -4,7 +4,7 @@ __pycache__/
 .python-version
 data/raw/
 data/processed/
-reports/profiling/
+reports/
 .ipynb_checkpoints/
 .ruff_cache/
 logs/
