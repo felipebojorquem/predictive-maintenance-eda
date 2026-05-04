@@ -14,7 +14,7 @@ def plot_failure_distribution(df: pd.DataFrame) -> go.Figure:
     Gráfico 1: Distribución de tipos de fallo.
 
     Parameters:
-        df: pd.DataFrame DataFrame procesado.
+        df: DataFrame procesado.
 
     Returns:
         go.Figure: Gráfico de barras con frecuencia de cada tipo de fallo.
@@ -40,10 +40,10 @@ def plot_correlation_heatmap(df: pd.DataFrame) -> matplotlib.figure.Figure:
     Gráfico 2: Heatmap de correlación entre variables numéricas.
 
     Parameters:
-        df: pd.DataFrame DataFrame procesado con features de ingeniería.
+        df: DataFrame procesado.
 
     Returns:
-        plt.Figure: Heatmap de correlación incluyendo features.
+        plt.Figure: Heatmap de correlación.
     """
     cols = NUMERIC_COLS + ["temp_delta", "power_W", "wear_rate", "Machine failure"]
     corr = df[cols].corr()
@@ -68,7 +68,7 @@ def plot_torque_speed_scatter(df: pd.DataFrame) -> go.Figure:
     Gráfico 3: Scatter torque x velocidad coloreado por fallo.
 
     Parameters:
-        df: pd.DataFrame DataFrame procesado.
+        df: DataFrame procesado.
 
     Returns:
         go.Figure: Scatter plot identificando zona de peligro operativa.
@@ -92,7 +92,7 @@ def plot_temp_delta_by_failure(df: pd.DataFrame) -> go.Figure:
     Gráfico 4: Boxplot de delta térmico por fallo HDF.
 
     Parameters:
-        df: pd.DataFrame DataFrame procesado con feature temp_delta.
+        df: DataFrame procesado con feature temp_delta.
 
     Returns:
         go.Figure: Boxplot que valida si temp_delta discrimina fallos térmicos.
@@ -118,7 +118,7 @@ def plot_wear_by_product_type(df: pd.DataFrame) -> go.Figure:
     Gráfico 5: Distribución de desgaste de herramienta por tipo de producto.
 
     Parameters:
-        df: pd.DataFrame DataFrame procesado.
+        df: DataFrame procesado.
 
     Returns:
         go.Figure: Histograma de desgaste por tipo L/M/H.
@@ -146,7 +146,7 @@ def plot_failure_rate_by_type(df: pd.DataFrame) -> go.Figure:
     Gráfico 6: Tasa de fallo por tipo de producto.
 
     Parameters:
-        df: pd.DataFrame DataFrame procesado.
+        df: DataFrame procesado.
 
     Returns:
         go.Figure: Barras con tasa de fallo (%) por tipo L/M/H.

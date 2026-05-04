@@ -22,26 +22,28 @@ def clean(df: pd.DataFrame) -> pd.DataFrame:
     Aplica limpieza estándar al dataset AI4I 2020.
 
     Parameters:
-        df: pd.DataFrame Dataset crudo cargado desde CSV.
+        df: Dataset crudo cargado desde CSV.
 
     Returns:
-        pd.DataFrame: DataFrame limpio listo para feature engineering.
+        pd.DataFrame: DataFrame limpio listo para analisis.
     """
     logger.info("Iniciando limpieza del dataset")
     original_shape = df.shape
 
-    df = df.drop(columns=["UDI", "Product ID"], errors="ignore")
+    # Eliminar duplicados
+    n_duplicates = df.duplicated(subset=["UDI"]).sum()
+    if n_duplicates > 0:
+        df = df.drop_duplicates(subset=["UDI"])
+        logger.warning(f"Eliminados {n_duplicates} duplicados por UDI")
 
+    # Verificar y reportar nulos
     null_counts = df.isnull().sum()
     if null_counts.any():
         logger.warning(f"Nulos detectados:\n{null_counts[null_counts > 0]}")
     else:
         logger.info("Sin valores nulos")
 
-    n_duplicates = df.duplicated().sum()
-    if n_duplicates > 0:
-        df = df.drop_duplicates()
-        logger.warning(f"Eliminados {n_duplicates} duplicados")
+    df = df.drop(columns=["UDI", "Product ID"], errors="ignore")
 
     for col in FAILURE_TYPES + [TARGET_COL]:
         df[col] = df[col].astype(int)

@@ -17,6 +17,7 @@ dependencies = [
     "ipywidgets>=8.1",
     "setuptools<70",
     "fg-data-profiling>=4.19.1",
+    "kaleido==0.2.1",
 ]
 
 [dependency-groups]

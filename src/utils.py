@@ -1,14 +1,13 @@
 import pandas as pd
 from loguru import logger
 
-
 def assert_columns(df: pd.DataFrame, required: list[str]) -> None:
     """
     Verifica que el DataFrame contiene las columnas requeridas.
 
     Parameters:
-        df: pd.DataFrame DataFrame a verificar.
-        required: list[str] Lista de columnas que deben existir.
+        df: DataFrame a verificar.
+        required: Lista de columnas que deben existir.
 
     Raises:
         AssertionError: Si alguna columna requerida no existe.
@@ -23,8 +22,8 @@ def log_dataframe_info(df: pd.DataFrame, label: str = "") -> None:
     Registra información básica del DataFrame en el log.
 
     Parameters:
-        df: pd.DataFrame DataFrame a inspeccionar.
-        label: str Etiqueta opcional para identificar el log.
+        df: DataFrame a inspeccionar.
+        label: Etiqueta opcional para identificar el log.
     """
     tag = f"[{label}] " if label else ""
     logger.info(f"{tag}Shape: {df.shape}")
