@@ -39,7 +39,7 @@ hacia modelado ML, despliegue API y monitorización en producción.
 | Almacenamiento       | `pyarrow` — Parquet (snappy)          |
 | Validación de datos  | `pandera`                             |
 | Visualización        | `plotly 5.x`, `seaborn 0.13+`         |
-| EDA automático       | `ydata-profiling`                     |
+| EDA automático       | `data-profiling`                      |
 | Logging              | `loguru`                              |
 | Linting / Formatting | `ruff`                                |
 | Tests                | `pytest`, `pytest-cov`                |
@@ -64,7 +64,7 @@ predictive_maintenance_eda/
 │   └── eda.ipynb               # Notebook principal
 │
 ├── reports/
-│   └── profiling/              # Reporte ydata-profiling (HTML)
+│   └── profiling/              # Reporte data-profiling (HTML)
 │
 ├── src/
 │   ├── config.py               # Rutas y constantes globales
@@ -119,7 +119,7 @@ uv run python main.py
 Esto genera:
 
 - `data/processed/ai4i2020_clean.parquet` — dataset procesado
-- `reports/profiling/eda_report.html` — reporte automático ydata-profiling
+- `reports/profiling/eda_report.html` — reporte automático data-profiling
 - `logs/pipeline.log` — log estructurado de la ejecución
 
 ### 5. Lanzar el notebook
