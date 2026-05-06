@@ -28,7 +28,7 @@ def main() -> None:
     # 3. Validación de schema
     df = validate_schema(df)
 
-    # 4. Feature engineering
+    # 4. Crear Features
     df = build_features(df)
     log_dataframe_info(df, label="PROCESSED")
 

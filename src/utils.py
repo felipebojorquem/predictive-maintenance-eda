@@ -1,6 +1,7 @@
 import pandas as pd
 from loguru import logger
 
+
 def assert_columns(df: pd.DataFrame, required: list[str]) -> None:
     """
     Verifica que el DataFrame contiene las columnas requeridas.

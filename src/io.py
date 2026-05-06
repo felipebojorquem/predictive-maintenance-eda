@@ -4,6 +4,7 @@ from loguru import logger
 
 from src.config import PROCESSED_PATH, RAW_PATH
 
+
 def load_csv(path: Path = RAW_PATH) -> pd.DataFrame:
     """
     Carga el dataset crudo desde CSV.
