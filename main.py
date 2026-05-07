@@ -56,7 +56,7 @@ def main() -> None:
     logger.info("Generando visualizaciones — reports/figures/")
     FIGURES_PATH.mkdir(parents=True, exist_ok=True)
 
-    # Figuras plotly → HTML (interactivas, no requieren kaleido)
+    # Figuras plotly → HTML 
     plot_failure_distribution(df).write_html(
         str(FIGURES_PATH / "fig1_failure_distribution.html")
     )
