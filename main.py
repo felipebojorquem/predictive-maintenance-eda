@@ -52,23 +52,25 @@ def main() -> None:
     profile.to_file(REPORT_PATH)
     logger.success(f"Reporte guardado en {REPORT_PATH}")
 
-    # 7. Exportar visualizaciones clave como PNG
+    # 7. Exportar visualizaciones clave
     logger.info("Generando visualizaciones — reports/figures/")
     FIGURES_PATH.mkdir(parents=True, exist_ok=True)
 
-    plot_failure_distribution(df).write_image(
-        FIGURES_PATH / "fig1_failure_distribution.png"
+    # Figuras plotly → HTML (interactivas, no requieren kaleido)
+    plot_failure_distribution(df).write_html(
+        str(FIGURES_PATH / "fig1_failure_distribution.html")
     )
-    plot_temp_delta_by_failure(df).write_image(
-        FIGURES_PATH / "fig2_temp_delta_hdf.png"
+    plot_temp_delta_by_failure(df).write_html(
+        str(FIGURES_PATH / "fig2_temp_delta_hdf.html")
     )
-    plot_torque_speed_scatter(df).write_image(
-        FIGURES_PATH / "fig3_torque_speed_scatter.png"
+    plot_torque_speed_scatter(df).write_html(
+        str(FIGURES_PATH / "fig3_torque_speed_scatter.html")
     )
-    plot_failure_rate_by_type(df).write_image(
-        FIGURES_PATH / "fig5_failure_rate_by_type.png"
+    plot_failure_rate_by_type(df).write_html(
+        str(FIGURES_PATH / "fig5_failure_rate_by_type.html")
     )
 
+    # Figuras matplotlib → PNG
     fig4 = plot_wear_vs_twf(df)
     fig4.savefig(FIGURES_PATH / "fig4_wear_vs_twf.png", dpi=150, bbox_inches="tight")
     plt.close(fig4)
