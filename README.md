@@ -64,7 +64,14 @@ predictive_maintenance_eda/
 │   └── eda.ipynb               # Notebook principal
 │
 ├── reports/
-│   └── profiling/              # Reporte data-profiling (HTML)
+│   ├── profiling/              # Reporte data-profiling (.gitignore)
+│   └── figures/                # Figuras exportadas por main.py
+│       ├── fig1_failure_distribution.html
+│       ├── fig2_temp_delta_hdf.html
+│       ├── fig3_torque_speed_scatter.html
+│       ├── fig4_wear_vs_twf.png
+│       ├── fig5_failure_rate_by_type.html
+│       └── fig6_correlation_heatmap.png
 │
 ├── src/
 │   ├── config.py               # Rutas y constantes globales
@@ -120,6 +127,7 @@ Esto genera:
 
 - `data/processed/ai4i2020_clean.parquet` — dataset procesado
 - `reports/profiling/eda_report.html` — reporte automático data-profiling
+- `reports/figures/` — 6 figuras exportadas (4 HTML interactivos + 2 PNG)
 - `logs/pipeline.log` — log estructurado de la ejecución
 
 ### 5. Lanzar el notebook
@@ -161,11 +169,13 @@ Cada tipo de fallo responde a un predictor dominante diferente:
   La baja varianza del grupo HDF=1 (std=0.28 K) sugiere un umbral de activación
   próximo a 8.5 K.
 
-- **PWF/OSF:** La zona de peligro se localiza en **1.200–1.400 rpm con torque >60 Nm**.
-  Los fallos presentan una `power_W` media de **7.283 W** frente a **6.245 W** en
-  operación normal (+16.6%). La correlación Torque↔RPM = **-0.88** confirma operación
-  a potencia aproximadamente constante, validando `power_W` (P = τ × ω) como feature
-  representativa del régimen operativo.
+- **PWF/OSF:** Se identifican dos zonas de peligro en el espacio torque×velocidad.
+  La zona principal es **1.401–1.700 rpm × 61–80 Nm** con una tasa de fallo del
+  **71.4%**, seguida de **1.100–1.400 rpm × 61–80 Nm** con **40.1%**. Una segunda
+  zona de riesgo aparece en **2.401–3.000 rpm × 0–20 Nm** con **60.9%**, asociada
+  a operación fuera del rango nominal. La correlación Torque↔RPM = **-0.88** confirma
+  operación a potencia aproximadamente constante, validando `power_W` (P = τ × ω)
+  como feature representativa del régimen operativo.
 
 - **TWF:** `Tool wear [min]` predice TWF con separación casi perfecta. El **100%** de
   los fallos TWF ocurre con desgaste acumulado **>198 min** (mediana=214.5 min,
