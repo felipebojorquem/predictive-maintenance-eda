@@ -242,3 +242,7 @@ aplicaciones industriales reales.
 
 Matzka, S. (2020). _AI4I 2020 Predictive Maintenance Dataset_ [Dataset].
 UCI Machine Learning Repository. https://doi.org/10.24432/C5HS5C
+
+---
+
+Proyecto académico desarrollado durante el Master en Data Science & AI de Evolve.
