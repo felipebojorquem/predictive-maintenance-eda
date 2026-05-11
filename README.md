@@ -152,10 +152,10 @@ Las figuras generadas por Plotly son accesibles como HTML interactivo vía GitHu
 
 | Figura                                                                                                                                             | Descripción                               |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| [Fig. 1 — Distribución de fallos](https://felipebojorquem.github.io/predictive-maintenance-eda/reports/figures/fig1_failure_distribution.html)     | Frecuencia absoluta de cada tipo de fallo |
-| [Fig. 2 — Delta térmico vs HDF](https://felipebojorquem.github.io/predictive-maintenance-eda/reports/figures/fig2_temp_delta_hdf.html)             | Boxplot temp_delta por grupo HDF          |
-| [Fig. 3 — Scatter torque × velocidad](https://felipebojorquem.github.io/predictive-maintenance-eda/reports/figures/fig3_torque_speed_scatter.html) | Zona de peligro operativo                 |
-| [Fig. 5 — Tasa de fallo por tipo](https://felipebojorquem.github.io/predictive-maintenance-eda/reports/figures/fig5_failure_rate_by_type.html)     | Comparativa L / M / H                     |
+| [Fig. 1 — Distribución de fallos](https://felipebojorquem.github.io/Proyecto-Master-DataScience-Evolve-FelipeBojorque/reports/figures/fig1_failure_distribution.html)     | Frecuencia absoluta de cada tipo de fallo |
+| [Fig. 2 — Delta térmico vs HDF](https://felipebojorquem.github.io/Proyecto-Master-DataScience-Evolve-FelipeBojorque/reports/figures/fig2_temp_delta_hdf.html)             | Boxplot temp_delta por grupo HDF          |
+| [Fig. 3 — Scatter torque × velocidad](https://felipebojorquem.github.io/Proyecto-Master-DataScience-Evolve-FelipeBojorque/reports/figures/fig3_torque_speed_scatter.html) | Zona de peligro operativo                 |
+| [Fig. 5 — Tasa de fallo por tipo](https://felipebojorquem.github.io/Proyecto-Master-DataScience-Evolve-FelipeBojorque/reports/figures/fig5_failure_rate_by_type.html)     | Comparativa L / M / H                     |
 
 > Las figuras Fig. 4 y Fig. 6 (matplotlib) están disponibles directamente en [`reports/figures/`](reports/figures/).
 
